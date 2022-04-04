@@ -7,7 +7,7 @@ document.addEventListener('page:loaded', () => {
     window.MathJax = {
       tex: {
         inlineMath: { '[+]': [['$', '$']] },
-        tags      : CONFIG.mathjax.tags
+        tags      : CONFIG.mathjax.tags,
       },
       options: {
         renderActions: {
