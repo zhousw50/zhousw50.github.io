@@ -8,6 +8,7 @@ document.addEventListener('page:loaded', () => {
       tex: {
         inlineMath: { '[+]': [['$', '$']] },
         tags      : CONFIG.mathjax.tags,
+        enableMenu: false
       },
       options: {
         renderActions: {
