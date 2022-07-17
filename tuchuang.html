@@ -22,24 +22,24 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zhousw.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"输入关键词","empty":"没有找到","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="AJAX实现读取文本文档内容到网页                   button         {             -webkit-text-size-adjust: 100%;             --body-bg-color: #282828;             --content-bg-color: #333;             --c">
+    <meta name="description" content="图床                  BiuBiu(2M)     MyNB8(2M)     葫芦侠(5M)     易车(5M)     携程(5M)     美洽(10M)     IMCC(10M)     爱发电(10M)     美团(10M)     亚马逊S3(10M)     上传图片">
 <meta property="og:type" content="website">
 <meta property="og:title" content="zhousw的博客！">
-<meta property="og:url" content="https://zhousw.top/1.html">
+<meta property="og:url" content="https://zhousw.top/tuchuang.html">
 <meta property="og:site_name" content="zhousw的博客！">
-<meta property="og:description" content="AJAX实现读取文本文档内容到网页                   button         {             -webkit-text-size-adjust: 100%;             --body-bg-color: #282828;             --content-bg-color: #333;             --c">
+<meta property="og:description" content="图床                  BiuBiu(2M)     MyNB8(2M)     葫芦侠(5M)     易车(5M)     携程(5M)     美洽(10M)     IMCC(10M)     爱发电(10M)     美团(10M)     亚马逊S3(10M)     上传图片">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-17T14:21:24.950Z">
-<meta property="article:modified_time" content="2022-07-17T14:21:24.950Z">
+<meta property="article:published_time" content="2022-07-15T14:39:23.890Z">
+<meta property="article:modified_time" content="2022-07-15T14:39:23.890Z">
 <meta property="article:author" content="zhousw">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://zhousw.top/1.html">
+<link rel="canonical" href="https://zhousw.top/tuchuang.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://zhousw.top/1.html","path":"1.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://zhousw.top/tuchuang.html","path":"tuchuang.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title> | zhousw的博客！
@@ -236,116 +236,180 @@
       
       <div class="post-body">
           <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>AJAX实现读取文本文档内容到网页</title>
-    <script src="https://cdn.jsdelivr.net/gh/dropbox/zxcvbn/dist/zxcvbn.js"></script>
-    <style>
-        button
-        {
-            -webkit-text-size-adjust: 100%;
-            --body-bg-color: #282828;
-            --content-bg-color: #333;
-            --card-bg-color: #555;
-            --text-color: #ccc;
-            --blockquote-color: #bbb;
-            --link-color: #ccc;
-            --link-hover-color: #eee;
-            --brand-color: #ddd;
-            --brand-hover-color: #ddd;
-            --table-row-odd-bg-color: #282828;
-            --table-row-hover-bg-color: #363636;
-            --menu-item-bg-color: #555;
-            --theme-color: #222;
-            --btn-default-bg: #222;
-            --btn-default-color: #ccc;
-            --btn-default-border-color: #555;
-            --btn-default-hover-bg: #666;
-            --btn-default-hover-color: #ccc;
-            --btn-default-hover-border-color: #666;
-            --highlight-background: #1d1f21;
-            --highlight-foreground: #c5c8c6;
-            --highlight-gutter-background: #2d2f31;
-            --highlight-gutter-foreground: #b4b7b5;
-            color-scheme: dark;
-            visibility: inherit;
-            font-family: inherit;
-            margin: 0;
-            overflow: visible;
-            text-transform: none;
-            -webkit-appearance: button;
-            box-sizing: border-box;
-            padding: 0.75em 1.25em;
-            display: inline-block;
-            line-height: 1;
-            text-decoration: none;
-            white-space: nowrap;
-            cursor: pointer;
-            border: 1px solid #6190e8;
-            border-radius: 5px;
-            background-color: #6190e8;
-            color: #fff;
-            outline: none;
-            font-size: 0.75em;
-            margin-right: 0;
-        }
-        section{box-shadow: 0 0 5px #666;margin-top: 15px;}
-        input {
-            -webkit-text-size-adjust: 100%;
-            word-wrap: break-word;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-writing-mode: horizontal-tb !important;
-            -webkit-rtl-ordering: logical;
-            text-rendering: auto;
-            text-align: center;
-            box-sizing: border-box;
-            height: 36px;
-            width: 30%;
-            margin: 0;
-            padding: 8px 0;
-            overflow: hidden;
-            font-size: 16px;
-            font-family: inherit;
-            line-height: 20px;
-            background: 0 0;
-            border: none;
-            border-bottom: 1px solid;
-            border-radius: 0;
-            outline: 0;
-            box-shadow: none;
-            transition-timing-function: cubic-bezier(.4,0,.2,1);
-            transition-duration: .2s;
-            transition-property: border-bottom-color,padding-right,box-shadow,-webkit-box-shadow;
-            appearance: none;
-            resize: none;
-        }
-    </style>
-    <script src="https://adn.arcitcgn.cn/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <meta charset="utf-8" />
+  <title>图床</title>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="https://cdn.staticfile.org/limonte-sweetalert2/11.4.20/sweetalert2.min.css" />
 </head>
 <body>
-路径：<input id="url">
-<button onclick="readTxt()">读取</button>
-<br>
-<section id="container"></section>
+    <form enctype="multipart/form-data" style="display: none"><input id="UPLoad_FilePicture_Input" name="FilePicture" type="file" /><input /></form>
+    <a href="?Type=BiuBiu">BiuBiu(2M)</a>
+    <a href="?Type=MyNB8">MyNB8(2M)</a>
+    <a href="?Type=HuluXia">葫芦侠(5M)</a>
+    <a href="?Type=YiChe">易车(5M)</a>
+    <a href="?Type=Ctrip">携程(5M)</a>
+    <a href="?Type=MeiQia">美洽(10M)</a>
+    <a href="?Type=IMCC" id="IMCC">IMCC(10M)</a>
+    <a href="?Type=BiuBiu" id="AFDian">爱发电(10M)</a>
+    <a href="?Type=AFDian" id="MeiTuan">美团(10M)</a>
+    <a href="?Type=AWSS3" id="AWSS3">亚马逊S3(10M)</a>
+    <div id="Picture"><p>上传图片</p></div>
+    <script src="https://img.kinh.cc/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"></script></body>
+    <script src="https://cdn.staticfile.org/mdui/1.0.2/js/mdui.min.js"  ></script>
+    <script src="https://cdn.staticfile.org/limonte-sweetalert2/11.4.20/sweetalert2.min.js"  ></script>
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"  ></script>
+    <script src="https://api.kinh.cc/Static/JavaScript/LoadIng.js"  ></script>
+    <script src="https://api.kinh.cc/Static/JavaScript/Necessary.js"  ></script>
 <script>
-    function readTxt() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('get',$("#url").val(),true);
-        xhr.send();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4&&xhr.status == 200){
-                var html=xhr.responseText;
-                document.innerHTML=html;
+        var WebUrl = document.location.toString();
+        function UPLoad_Picture_API(Data) {
+            var UrlAPI = "https://api.kinh.cc/Picture/";
+
+            var UrlAPI_HuluXia = UrlAPI + "HuluXia.php";
+            var UrlAPI_YiChe = UrlAPI + "YiChe.php";
+            var UrlAPI_Ctrip = UrlAPI + "Ctrip.php";
+            var UrlAPI_MeiTuan = UrlAPI + "MeiTuan.php";
+            var UrlAPI_AFDian = UrlAPI + "AFDian.php";
+            var UrlAPI_IMCC = UrlAPI + "IMCC.php";
+            var UrlAPI_AWSS3 = UrlAPI + "AWSS3.php";
+            var UrlAPI_MyNB8 = UrlAPI + "MyNB8.php";
+            var UrlAPI_BiuBiu = UrlAPI + "BiuBiu.php";
+            var UrlAPI_MeiQia = UrlAPI + "MeiQia.php";
+
+            if (WebUrl.indexOf("Type=HuluXia") != -1) {
+                UrlAPI = UrlAPI_HuluXia;
+            } else if (WebUrl.indexOf("Type=YiChe") != -1) {
+                UrlAPI = UrlAPI_YiChe;
+            } else if (WebUrl.indexOf("Type=Ctrip") != -1) {
+                UrlAPI = UrlAPI_Ctrip;
+            } else if (WebUrl.indexOf("Type=AFDian") != -1) {
+                UrlAPI = UrlAPI_AFDian;
+            } else if (WebUrl.indexOf("Type=IMCC") != -1) {
+                UrlAPI = UrlAPI_IMCC;
+            } else if (WebUrl.indexOf("Type=AWSS3") != -1) {
+                UrlAPI = UrlAPI_AWSS3;
+            } else if (WebUrl.indexOf("Type=MyNB8") != -1) {
+                UrlAPI = UrlAPI_MyNB8;
+            } else if (WebUrl.indexOf("Type=BiuBiu") != -1) {
+                UrlAPI = UrlAPI_BiuBiu;
+            } else if (WebUrl.indexOf("Type=MeiQia") != -1) {
+                UrlAPI = UrlAPI_MeiQia;
+            } else {
+                UrlAPI = UrlAPI_MeiTuan;
             }
-            else {
-                $("#container").text("无此文件");
+            LoadIng(true, "正在上传图片", 220);
+            $.ajax({
+                dataType: "json",
+                type: "POST",
+                url: UrlAPI,
+                data: Data,
+                cache: false,
+                processData: false,
+                contentType: false,
+                timeout: 8000,
+                error: function () {
+                    LoadIng(false);
+                    document.getElementById("UPLoad_FilePicture_Input").outerHTML = document.getElementById("UPLoad_FilePicture_Input").outerHTML;
+                    Swal.fire({
+                        icon: "error",
+                        title: "上传失败",
+                        text: "请求错误",
+                        confirmaText: "刷新",
+                    }).then(function () {
+                        window.location.reload();
+                    });
+                },
+                success: function (Result) {
+                    LoadIng(false);
+                    document.getElementById("UPLoad_FilePicture_Input").outerHTML = document.getElementById("UPLoad_FilePicture_Input").outerHTML;
+
+                    if (Result.Status == 0) {
+                        var PictureLink = Result.Link;
+
+                        Swal.fire({
+                            icon: "success",
+                            title: "上传成功",
+                            imageUrl: PictureLink,
+                            text: PictureLink
+                        }).then(function (Result) {
+                            if (Result.isConfirmed) {
+                                var aux = document.createElement("input");
+                                aux.setAttribute("value", PictureLink);
+                                document.body.appendChild(aux);
+                                aux.select();
+                                document.execCommand("copy");
+                                document.body.removeChild(aux);
+
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "复制成功",
+                                    showConfirmButton: false,
+                                    timer:1000
+                                });
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "上传失败",
+                            text: "请求错误"
+                        }).then(function () {
+                            window.location.reload();
+                        });
+                    }
+                },
+            });
+        }
+
+        document.getElementById("Picture").addEventListener("click", function () {
+            var Picture_Document = document.getElementById("UPLoad_FilePicture_Input");
+            Picture_Document.click();
+            Picture_Document.addEventListener("change", function () {
+                if (document.getElementById("UPLoad_FilePicture_Input").files[0].name == "") {
+                    Picture_Document.outerHTML = Picture_Document.outerHTML;
+                } else {
+                    var FilePicture = document.getElementById("UPLoad_FilePicture_Input").files[0];
+                    var Data = new FormData();
+                    Data.append("FilePicture", FilePicture);
+                    UPLoad_Picture_API(Data);
+                }
+            });
+        });
+
+        document.addEventListener("paste", function (Event) {
+            if (Event.clipboardData || Event.originalEvent) {
+                var FilePicture = Event.clipboardData.items[0].getAsFile();
+
+                var Data = new FormData();
+                Data.append("FilePicture", FilePicture);
+
+                UPLoad_Picture_API(Data);
             }
-        };
-    }
-</script>
-</body>
+        });
+
+        document.addEventListener("dragenter", function (Event) {
+            Event.preventDefault();
+        });
+
+        document.addEventListener("dragover", function (Event) {
+            Event.preventDefault();
+        });
+
+        document.addEventListener("drop", function (Event) {
+            Event.preventDefault();
+
+            var FilePicture = Event.dataTransfer.files[0];
+
+            var Data = new FormData();
+            Data.append("FilePicture", FilePicture);
+
+            UPLoad_Picture_API(Data);
+        });
+    </script>
 </html>
+
       </div>
       
       
@@ -409,7 +473,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhousw50","repo":"zhousw50.github.io","client_id":"5163fd532e85bb8b42ae","client_secret":"182afe6a5747e850a23e7af51fdeb973f3d44949","admin_user":"zhousw50","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"a58f7cd63640e4e69b0b7fd43decccb0"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zhousw50","repo":"zhousw50.github.io","client_id":"5163fd532e85bb8b42ae","client_secret":"182afe6a5747e850a23e7af51fdeb973f3d44949","admin_user":"zhousw50","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"1a09f5e9c34ea39db848cdf1ea1941ea"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
